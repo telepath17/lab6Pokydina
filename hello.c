@@ -6,13 +6,13 @@
 #include <linux/ktime.h>
 #include <linux/slab.h>
 
-MODULE_AUTHOR("Pokydina Yelyzaveta IO-03");
+MODULE_AUTHOR("Pokydina IO-03");
 MODULE_DESCRIPTION("Lab 6");
 MODULE_LICENSE("Dual BSD/GPL");
 
-static unsigned int num_of_greet = 1;
-module_param(num_of_greet, uint, S_IRUGO);
-MODULE_PARM_DESC(num_of_greet, "Number of times Hello, World! string will be printed");
+static unsigned int number_of_greets = 1;
+module_param(number_of_greets, uint, S_IRUGO);
+MODULE_PARM_DESC(number_of_greets, "Number of 'Hello, World!'");
 
 struct event_list {
     struct list_head list;
@@ -25,15 +25,15 @@ static LIST_HEAD(event_list_head);
 void new_event(void);
 static int __init hello_init(void)
 {
-    if (num_of_greet == 0 || (num_of_greet >= 5 && num_of_greet <= 10)) {
+    if (number_of_greets == 0 || (number_of_greets >= 5 && number_of_greets <= 10)) {
         printk(KERN_WARNING "Parameter is 0 or between 5 and 10");  
     }
-    if (num_of_greet > 10) {
+    if (number_of_greets > 10) {
         printk(KERN_ERR "Parameter is too large");
         return -EINVAL;
     }
     int i;
-    for (i = 0; i < num_of_greet; i++) {
+    for (i = 0; i < number_of_greets; i++) {
         printk(KERN_EMERG "Hello, World!\n");
         new_event();
     }
