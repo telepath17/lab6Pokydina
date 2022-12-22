@@ -7,7 +7,7 @@
 #include <linux/slab.h>
 
 MODULE_AUTHOR("Pokydina");
-MODULE_DESCRIPTION("Lab 6");
+MODULE_DESCRIPTION("6");
 MODULE_LICENSE("Dual BSD/GPL");
 
 static unsigned int number_of_greets = 1;
