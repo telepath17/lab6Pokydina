@@ -6,7 +6,7 @@
 #include <linux/ktime.h>
 #include <linux/slab.h>
 
-MODULE_AUTHOR("Pokydina IO-03");
+MODULE_AUTHOR("Pokydina");
 MODULE_DESCRIPTION("Lab 6");
 MODULE_LICENSE("Dual BSD/GPL");
 
